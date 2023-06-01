@@ -633,9 +633,23 @@ PioneerDDJRB.loopMoveForwardButton = function(channel, control, value, status, g
     }
 };
 
-PioneerDDJRB.loadButton = function(channel, control, value, status, group) {
+// PioneerDDJRB.loadButton = function(channel, control, value, status, group) {
+//     if (value) {
+//         engine.setValue(group, 'LoadSelectedTrack', 1);
+//     }
+// };
+
+// Added
+PioneerDDJRB.loadButtonDeck1 = function(channel, control, value, status, group) {
     if (value) {
-        engine.setValue(group, 'LoadSelectedTrack', 1);
+        engine.setValue( '[Channel1]' , 'LoadSelectedTrack', 1);
+    }
+};
+
+// Added
+PioneerDDJRB.loadButtonDeck2 = function(channel, control, value, status, group) {
+    if (value) {
+        engine.setValue( '[Channel2]' , 'LoadSelectedTrack', 1);
     }
 };
 
