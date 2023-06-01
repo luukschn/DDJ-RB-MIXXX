@@ -418,7 +418,7 @@
 	    </control>
             <control>
                 <group>[Channel1]</group>
-                <key>PioneerDDJRB.loopIn</key>
+                <key>PioneerDDJRB.loopInButton</key>
                 <description>Loop In Deck 1 </description>
                 <status>0x90</status>
                 <midino>0x10</midino>
@@ -428,7 +428,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>PioneerDDJRB.loopIn</key>
+                <key>PioneerDDJRB.loopInButton</key>
                 <description>Loop In Deck 2 </description>
                 <status>0x91</status>
                 <midino>0x10</midino>
@@ -438,7 +438,7 @@
 	    </control>
             <control>
                 <group>[Channel1]</group>
-                <key>PioneerDDJRB.loopIn</key>
+                <key>PioneerDDJRB.loopInButton</key>
                 <description>Loop In Deck 1 + SHIFT </description>
                 <status>0x90</status>
                 <midino>0x4C</midino>
@@ -448,7 +448,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>PioneerDDJRB.loopIn</key>
+                <key>PioneerDDJRB.loopInButton</key>
                 <description>Loop In Deck 2 + SHIFT</description>
                 <status>0x91</status>
                 <midino>0x4C</midino>
@@ -458,7 +458,7 @@
 	    </control>
             <control>
                 <group>[Channel1]</group>
-                <key>PioneerDDJRB.loopIn</key>
+                <key>PioneerDDJRB.loopInButton</key>
                 <description>Loop In long press Deck 1</description>
                 <status>0x90</status>
                 <midino>0x45</midino>
@@ -468,7 +468,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>PioneerDDJRB.loopIn</key>
+                <key>PioneerDDJRB.loopInButton</key>
                 <description>Loop In long press Deck 2</description>
                 <status>0x91</status>
                 <midino>0x45</midino>
