@@ -29,7 +29,7 @@ PioneerDDJRB.blinkingSync = false;
 PioneerDDJRB.invertVinylSlipButton = false;
 
 // Sets the jogwheels sensivity. 1 is default, 2 is twice as sensitive, 0.5 is half as sensitive.
-PioneerDDJRB.jogwheelSensivity = 1.0;
+PioneerDDJRB.jogwheelSensivity = 5.0;
 
 // Sets how much more sensitive the jogwheels get when holding shift.
 // Set to 1 to disable jogwheel sensitivity increase when holding shift.
@@ -156,6 +156,7 @@ PioneerDDJRB.init = function(id) {
         PioneerDDJRB.vu_meter_timer = engine.beginTimer(100, "PioneerDDJRB.vuMeterTwinkle()");
     }
 };
+
 
 PioneerDDJRB.shutdown = function() {
     PioneerDDJRB.bindAllControlConnections(true);
@@ -1162,4 +1163,9 @@ PioneerDDJRB.softTakeoverEmulation = function(deck, index, currentValue) {
     }
     return false;
 };
+
+
+
+id_init = 0
+PioneerDDJRB.init(id_init)
 

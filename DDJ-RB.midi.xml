@@ -2,7 +2,7 @@
 <MixxxControllerPreset mixxxVersion="2.0+" schemaVersion="1">
     <info>
         <name>Pioneer DDJ-RB</name>
-        <author>Jason Bramsden</author>
+        <author>Jason Bramsden and Alessandro Sciarrillo</author>
         <description>Pioneer DDJ-RB</description>
         <forums></forums>
         <wiki></wiki>
@@ -198,7 +198,7 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>PioneerDDJRB.jogPlatter</key>
+                <key>PioneerDDJRB.jogPlatterTick</key>
                 <description>Jog Platter Rotate Deck 1 Vinyl On</description>
                 <status>0xB0</status>
                 <midino>0x22</midino>
@@ -208,7 +208,7 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>PioneerDDJRB.jogPlatter</key>
+                <key>PioneerDDJRB.jogPlatterTick</key>
                 <description>Jog Platter Rotate Deck 1 Vinyl Off</description>
                 <status>0xB0</status>
                 <midino>0x23</midino>
@@ -218,7 +218,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>PioneerDDJRB.jogPlatter</key>
+                <key>PioneerDDJRB.jogPlatterTick</key>
                 <description>Jog Platter Rotate Deck 2 Vinyl On</description>
                 <status>0xB1</status>
                 <midino>0x22</midino>
@@ -228,7 +228,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>PioneerDDJRB.jogPlatter</key>
+                <key>PioneerDDJRB.jogPlatterTick</key>
                 <description>Jog Platter Rotate Deck 2 Vinyl Off</description>
                 <status>0xB1</status>
                 <midino>0x23</midino>
@@ -238,7 +238,7 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>PioneerDDJRB.jogPlatter</key>
+                <key>PioneerDDJRB.jogPlatterTick</key>
                 <description>Jog Platter Rotate Deck 1 + SHIFT</description>
                 <status>0xB0</status>
                 <midino>0x1F</midino>
@@ -248,7 +248,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>PioneerDDJRB.jogPlatter</key>
+                <key>PioneerDDJRB.jogPlatterTick</key>
                 <description>Jog Platter Rotate Deck 2 + SHIFT</description>
                 <status>0xB1</status>
                 <midino>0x1F</midino>
@@ -258,7 +258,7 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>PioneerDDJRB.jogPlatter</key>
+                <key>PioneerDDJRB.jogPlatterTick</key>
                 <description>Jog Platter Touch Deck 1</description>
                 <status>0x90</status>
 		<midino>0x36</midino>
@@ -268,7 +268,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>PioneerDDJRB.jogPlatter</key>
+                <key>PioneerDDJRB.jogPlatterTick</key>
                 <description>Jog Platter Touch Deck 2</description>
                 <status>0x91</status>
                 <midino>0x36</midino>
@@ -278,7 +278,7 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>PioneerDDJRB.jogPlatter</key>
+                <key>PioneerDDJRB.jogPlatterTick</key>
                 <description>Jog Platter Touch Deck 1 + SHIFT</description>
                 <status>0x90</status>
 		<midino>0x67</midino>
@@ -288,7 +288,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>PioneerDDJRB.jogPlatter</key>
+                <key>PioneerDDJRB.jogPlatterTick</key>
                 <description>Jog Platter Touch Deck 2 + SHIFT</description>
                 <status>0x91</status>
                 <midino>0x67</midino>
