@@ -17,461 +17,453 @@
     "terminology": {
       "NOTE": "MIDI term for when a keyboard/piano key is pressed or released",
       "CC": "Control Change - MIDI message for control information like sound quality and volume",
-      "EnglishScale": "Uses alphabetical letters C, D, E, F, G, A, B and # for halftone"
+      "EnglishScale": "Uses alphabetical letters C, D, E, F, G, A, B and # for halftone",
+      "note/cc": "0=note, 1=cc, -1=nul"
     },
     "controls": {
       "browser": [
         {
-          "control": "BROWSER",
-          "trigger": "press",
-          "channel": 7,
-          "type": "CC",
-          "value": 64,
-          "status": "B6",
-          "data1": "40",
-          "data2": "hh"
-        },
-        {
-          "control": "BROWSER + SHIFT",
-          "trigger": "press",
-          "channel": 7,
-          "type": "CC",
-          "value": 100,
-          "status": "B6",
-          "data1": "64",
-          "data2": "hh"
-        }
-      ],
-      "deck": [
-        {
-          "control": "DECK",
-          "trigger": "press",
-          "channel": "1/2",
-          "type": "NOTE",
-          "value": 11,
-          "note": "B-1",
-          "status": "9n",
-          "data1": "0B",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
-        },
-        {
-          "control": "DECK + SHIFT",
-          "trigger": "press",
-          "channel": "1/2",
-          "type": "NOTE",
-          "value": 71,
-          "note": "B4",
-          "status": "9n",
-          "data1": "47",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
-        },
-        {
-          "control": "Vinyl On",
-          "trigger": "press",
-          "channel": "1/2",
-          "type": "CC",
-          "value": 34,
-          "status": "Bn",
-          "data1": "22",
-          "data2": "hh"
-        },
-        {
-          "control": "Vinyl Off",
-          "trigger": "press",
-          "channel": "1/2",
-          "type": "CC",
-          "value": 35,
-          "status": "Bn",
-          "data1": "23",
-          "data2": "hh"
-        }
-      ],
-      "jog": [
-        {
-          "control": "JOG (Platter)",
-          "trigger": "rotate",
-          "channel": "1/2",
-          "type": "CC",
-          "values": [0, 32],
-          "status": "Bn",
-          "data1": ["00", "20"],
-          "data2": ["MSB", "LSB"],
-          "detail": "Difference count value from when previous operated. When turned clockwise: Increases from 0x41. When turned counterclockwise: Decreases from 0x3F"
-        },
-        {
-          "control": "JOG (Wheel side)",
-          "trigger": "rotate",
-          "channel": "1/2",
-          "type": "CC",
-          "values": [5, 37],
-          "status": "Bn",
-          "data1": ["05", "25"],
-          "data2": ["MSB", "LSB"],
-          "detail": "Difference count value from when previous operated. When turned clockwise: Increases from 0x41. When turned counterclockwise: Decreases from 0x3F"
-        }
-      ],
-      "transport": [
-        {
-          "control": "PLAY/PAUSE",
-          "trigger": "press",
-          "channel": "1/2",
-          "type": "NOTE",
-          "value": 11,
-          "note": "B-1",
-          "status": "9n",
-          "data1": "0B",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
-        },
-        {
-          "control": "CUE",
-          "trigger": "press",
-          "channel": "1/2",
-          "type": "NOTE",
-          "value": 12,
-          "note": "C0",
-          "status": "9n",
-          "data1": "0C",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
-        },
-        {
-          "control": "SYNC",
-          "trigger": "press",
-          "channel": "1/2",
-          "type": "NOTE",
-          "value": 88,
-          "note": "E6",
-          "status": "9n",
-          "data1": "58",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
-        }
-      ],
-      "tempo": [
-        {
-          "control": "TEMPO",
-          "trigger": "slide",
-          "channel": "1/2",
-          "type": "CC",
-          "values": [0, 32],
-          "status": "Bn",
-          "data1": ["00", "20"],
-          "data2": ["MSB", "LSB"],
-          "detail": "Min(MSB:0x00 LSB:0x00)～Max(MSB:0x7F LSB:0x7F)"
-        }
-      ],
-      "loop": [
-        {
-          "control": "LOOP IN",
-          "trigger": "press",
-          "channel": "1/2",
-          "type": "NOTE",
-          "value": 54,
-          "note": "F#3",
-          "status": "9n",
-          "data1": "36",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
-        },
-        {
-          "control": "LOOP OUT",
-          "trigger": "press",
-          "channel": "1/2",
-          "type": "NOTE",
-          "value": 49,
-          "note": "C#3",
-          "status": "9n",
-          "data1": "31",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
-        }
-      ],
-      "mixer": [
-        {
-          "control": "CROSSFADER",
-          "trigger": "slide",
-          "channel": 7,
-          "type": "CC",
-          "values": [31, 63],
-          "status": "B6",
-          "data1": ["1F", "3F"],
-          "data2": ["MSB", "LSB"],
-          "detail": "Min(MSB:0x00 LSB:0x00)~Max(MSB:0x7F LSB:0x7F), Min at left side, Max at right side"
-        },
-        {
-          "control": "CH FADER",
-          "trigger": "slide",
-          "channel": "1/2",
-          "type": "CC",
-          "values": [11, 43],
-          "status": "Bn",
-          "data1": ["0B", "2B"],
-          "data2": ["MSB", "LSB"],
-          "detail": "Min(MSB:0x00 LSB:0x00)~Max(MSB:0x7F LSB:0x7F), Min at bottom end, Max at top end"
-        },
-        {
-          "control": "GAIN (TRIM)",
-          "trigger": "rotate",
-          "channel": "1/2",
-          "type": "CC",
-          "values": [4, 36],
-          "status": "Bn",
-          "data1": ["04", "24"],
-          "data2": ["MSB", "LSB"],
-          "detail": "Min(MSB:0x00 LSB:0x00)~Max(MSB:0x7F LSB:0x7F), When turned fully counterclockwise: Min, When turned fully clockwise: Max"
-        },
-        {
-          "control": "EQ HIGH",
-          "trigger": "rotate",
-          "channel": "1/2",
-          "type": "CC",
-          "values": [7, 39],
-          "status": "Bn",
-          "data1": ["07", "27"],
-          "data2": ["MSB", "LSB"],
-          "detail": "Min(MSB:0x00 LSB:0x00)~Max(MSB:0x7F LSB:0x7F), When turned fully counterclockwise: Min, When turned fully clockwise: Max"
-        },
-        {
-          "control": "EQ MID",
-          "trigger": "rotate",
-          "channel": "1/2",
-          "type": "CC",
-          "values": [15, 47],
-          "status": "Bn",
-          "data1": ["0F", "2F"],
-          "data2": ["MSB", "LSB"],
-          "detail": "Min(MSB:0x00 LSB:0x00)~Max(MSB:0x7F LSB:0x7F), When turned fully counterclockwise: Min, When turned fully clockwise: Max"
-        },
-        {
-          "control": "EQ LOW",
-          "trigger": "rotate",
-          "channel": "1/2",
-          "type": "CC",
-          "values": [19, 51],
-          "status": "Bn",
-          "data1": ["13", "33"],
-          "data2": ["MSB", "LSB"],
-          "detail": "Min(MSB:0x00 LSB:0x00)~Max(MSB:0x7F LSB:0x7F), When turned fully counterclockwise: Min, When turned fully clockwise: Max"
-        }
-      ],
-      "headphones": [
-        {
-          "control": "HEADPHONES CUE",
-          "trigger": "press",
-          "channel": "1/2",
-          "type": "NOTE",
-          "value": 84,
-          "note": "C6",
-          "status": "9n",
-          "data1": "54",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
-        },
-        {
-          "control": "HEADPHONES MASTER",
-          "trigger": "press",
-          "channel": 7,
-          "type": "NOTE",
-          "value": 91,
-          "note": "G6",
-          "status": "96",
-          "data1": "5B",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
-        },
-        {
-          "control": "HEADPHONES VOL",
-          "trigger": "rotate",
-          "channel": 7,
-          "type": "CC",
-          "values": [13, 45],
-          "status": "B6",
-          "data1": ["0D", "2D"],
-          "data2": ["MSB", "LSB"],
-          "detail": "Min(MSB:0x00 LSB:0x00)~Max(MSB:0x7F LSB:0x7F)"
-        }
-      ],
-      "effects": [
-        {
-          "control": "FX1-1",
-          "trigger": "rotate",
-          "channel": 5,
-          "type": "CC",
-          "values": [2, 34],
-          "status": "B4",
-          "data1": ["02", "22"],
-          "data2": ["MSB", "LSB"],
-          "detail": "Min(MSB:0x00 LSB:0x00)~Max(MSB:0x7F LSB:0x7F), When turned fully counterclockwise: Min, When turned fully clockwise: Max"
-        },
-        {
-          "control": "FX2-1",
-          "trigger": "rotate",
-          "channel": 6,
-          "type": "CC",
-          "values": [2, 34],
-          "status": "B5",
-          "data1": ["02", "22"],
-          "data2": ["MSB", "LSB"],
-          "detail": "Min(MSB:0x00 LSB:0x00)~Max(MSB:0x7F LSB:0x7F), When turned fully counterclockwise: Min, When turned fully clockwise: Max"
-        },
-        {
-          "control": "FX1-1 ON",
-          "trigger": "press",
-          "channel": 5,
-          "type": "NOTE",
-          "value": 71,
-          "note": "B4",
-          "status": "94",
-          "data1": "47",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
-        },
-        {
-          "control": "FX2-1 ON",
-          "trigger": "press",
-          "channel": 6,
-          "type": "NOTE",
-          "value": 71,
-          "note": "B4",
-          "status": "95",
-          "data1": "47",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
-        }
-      ],
-      "performancePads": {
-        "deck1": [
-          {
-            "pad": 1,
-            "mode": "HOT CUE",
-            "trigger": "press",
-            "channel": 1,
-            "type": "NOTE",
-            "value": 36,
-            "note": "C2",
-            "status": "90",
-            "data1": "24",
-            "data2": "hh",
-            "detail": "OFF=0x00, ON=0x7F"
-          },
-          {
-            "pad": 1,
-            "mode": "BEAT JUMP",
-            "trigger": "press",
-            "channel": 1,
-            "type": "NOTE",
-            "value": 27,
-            "note": "D#1",
-            "status": "90",
-            "data1": "1B",
-            "data2": "hh",
-            "detail": "OFF=0x00, ON=0x7F"
+          "fig": "B1",
+          "ui_name": "Rotary selector",
+          "trigger": {
+            "rotate": {
+              "normal": {
+                "midi_channel": 7,
+                "note/cc": 1,
+                "midi_data": {
+                  "dec": 64,
+                  "eng_scale": null
+                },
+                "midi_in": {
+                  "status": "B6",
+                  "data1": "40",
+                  "data2": "hh"
+                },
+                "midi_out": {
+                  "status": null,
+                  "data1": null,
+                  "data2": null
+                },
+                "details_data2": [
+                  "Difference count value from previous operated",
+                  "Turn clockwise : 1 〜 30 (0x01 〜 0x1E)",
+                  "Turn counterclockwise : 127 〜 98 (0x7F 〜 0x62)"
+                ]
+              },
+              "shift": {
+                "midi_channel": 7,
+                "note/cc": 1,
+                "midi_data": {
+                  "dec": 100,
+                  "eng_scale": null
+                },
+                "midi_in": {
+                  "status":"B6",
+                  "data1":"64",
+                  "data2":"hh"
+                },
+                "midi_out":{
+                  "status":null,
+                  "data1":null,
+                  "data2":null
+                },
+                "details_data2":[
+                  "Difference count value from previous operated",
+                  "Turn clockwise : 1 〜 30 (0x01 〜 0x1E)",
+                  "Turn counterclockwise : 127 〜 98 (0x7F 〜 0x62)"
+                ]
+              }
+            },
+            "press": {
+              "normal":{
+
+              },
+              "shift":{}
+            }
           }
-        ],
-        "deck2": [
-          {
-            "pad": 1,
-            "mode": "HOT CUE",
-            "trigger": "press",
-            "channel": 2,
-            "type": "NOTE",
-            "value": 36,
-            "note": "C2",
-            "status": "91",
-            "data1": "24",
-            "data2": "hh",
-            "detail": "OFF=0x00, ON=0x7F"
-          },
-          {
-            "pad": 1,
-            "mode": "BEAT JUMP",
-            "trigger": "press",
-            "channel": 2,
-            "type": "NOTE",
-            "value": 27,
-            "note": "D#1",
-            "status": "91",
-            "data1": "1B",
-            "data2": "hh",
-            "detail": "OFF=0x00, ON=0x7F"
-          }
-        ]
-      },
-      "padModeButtons": [
-        {
-          "control": "HOT CUE",
-          "trigger": "press",
-          "channel": "1/2",
-          "type": "NOTE",
-          "value": 46,
-          "note": "A#2",
-          "status": "9n",
-          "data1": "2E",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
         },
         {
-          "control": "PAD FX1",
-          "trigger": "press",
-          "channel": "1/2",
-          "type": "NOTE",
-          "value": 48,
-          "note": "C3",
-          "status": "9n",
-          "data1": "30",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
+          "fig": "B2-L",
+          "ui_name":"LOAD",
+          "trigger": {}
         },
         {
-          "control": "SLICER",
-          "trigger": "press",
-          "channel": "1/2",
-          "type": "NOTE",
-          "value": 50,
-          "note": "D3",
-          "status": "9n",
-          "data1": "32",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
-        },
-        {
-          "control": "SAMPLER",
-          "trigger": "press",
-          "channel": "1/2",
-          "type": "NOTE",
-          "value": 52,
-          "note": "E3",
-          "status": "9n",
-          "data1": "34",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
+          "fig": "B2-R",
+          "ui_name":"LOAD",
+          "trigger":{}
         }
-      ]
-    },
-    "multiFunction": {
-      "description": "Performance pads in multi-function modes",
-      "channel": "8/9",
-      "pads": [
+      ],
+      "deck":[
         {
-          "pad": 1,
-          "note": 0,
-          "noteName": "C-1",
-          "status": "9p",
-          "data1": "00",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
+          "fig":"D1-L",
+          "ui_name":"PLAY/PAUSE",
+          "trigger":{}
         },
         {
-          "pad": 2,
-          "note": 1,
-          "noteName": "C#-1",
-          "status": "9p",
-          "data1": "01",
-          "data2": "hh",
-          "detail": "OFF=0x00, ON=0x7F"
+          "fig":"D1-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D2-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D2-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D3-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D3-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D4-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D4-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D5-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D5-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D6-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D6-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D7-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D7-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D8-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D8-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D9-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D9-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D10-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D10-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D11-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"D11-R",
+          "ui_name":"",
+          "trigger":{}
+        }
+      ],
+      "mixer":[
+        {
+          "fig":"M1",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M2-1",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M2-2",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M3-1",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M3-2",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M4-1",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M4-2",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M5-1",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M5-2",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M6-1",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M6-2",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M7-1",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M7-2",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M8",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M9",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M10",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M11",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M12-1",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"M12-2",
+          "ui_name":"",
+          "trigger":{}
+        }
+      ],
+      "effect":[
+        {
+          "fig":"F1-1",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"F1-2",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"F2",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"F3",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"F4",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"F5",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"F6",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"F7",
+          "ui_name":"",
+          "trigger":{}
+        }
+      ],
+      "pad":[
+        {
+          "fig":"P1-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P1-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P2-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P2-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P3-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P3-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P4-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P4-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P5-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P5-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P6-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P6-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P7-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P7-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P8-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P8-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P9-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P9-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P10-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P10-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P11-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P11-R",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P12-L",
+          "ui_name":"",
+          "trigger":{}
+        },
+        {
+          "fig":"P12-R",
+          "ui_name":"",
+          "trigger":{}
         }
       ]
     }
